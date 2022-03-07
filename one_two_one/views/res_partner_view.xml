@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree -->
+    <record id="view_res_partner_inherit_tree" model="ir.ui.view">
+        <field name="name">res.partner.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="appointment_count"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_res_partner_inherit_form" model="ir.ui.view">
+        <field name="name">res.partner.inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_appointment" type="object" class="oe_stat_button"
+                        icon="fa-pencil-square-o">
+                    <div class="o_stat_info">
+                        <field name="appointment_count" class="o_stat_value"/>
+                        <span class="o_stat_text">
+                            Appointments
+                        </span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="appointment_count"/>
+                <field name="date"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

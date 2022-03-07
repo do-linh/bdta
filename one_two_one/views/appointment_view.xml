@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Pivot-->
+    <record id="appointment_pivot" model="ir.ui.view">
+        <field name="name">appointment.custom.pivot</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <pivot string="Appointment">
+                <field name="inviter_id"/>
+                <!--                <field name="appointment_count"/>-->
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph -->
+    <record id="customer_graph" model="ir.ui.view">
+        <field name="name">appointment.custom.graph</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <graph string="Customer Graph" type="bar">
+                <field name="date" type="row"/>
+                <field name="customer_id" type="col"/>
+                <field name="customer_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Calendar-->
+    <record id="customer_calendar" model="ir.ui.view">
+        <field name="name">appointment.custom.calendar</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointment Calendar" date_start="date" color="reference" mode="month"
+                      quick_add="False">
+                <field name="reference"/>
+                <field name="inviter_id"/>
+                <field name="customer_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Search -->
+    <record id="view_appointment_search" model="ir.ui.view">
+        <field name="name">appointment.custom.search</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <search string="Recruitment Analysis">
+                <field name="reference"/>
+                <field name="inviter_id"/>
+                <field name="customer_id"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Inviter" name='inviter_id' context="{'group_by':'inviter_id'}"/>
+                    <filter string="Invitee" name='customer_id' context="{'group_by':'customer_id'}"/>
+                    <filter string="Order Date" name="date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Kanban Views -->
+    <record id="view_appointment_kanban" model="ir.ui.view">
+        <field name="name">appointment.custom.kanban</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1" default_order="id asc">
+                <field name="id"/>
+                <field name="reference"/>
+                <field name="inviter_id"/>
+                <field name="customer_id"/>
+                <field name="date"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        <strong>Personnel:</strong>
+                                        <field name="inviter_id"/>
+                                    </li>
+                                    <li>
+                                        <strong>Customer:</strong>
+                                        <field name="customer_id"/>
+
+                                    </li>
+                                    <li>
+                                        <strong>Appointment Schedule:</strong>
+                                        <field name="date"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Tree -->
+    <record id="view_appointment_tree" model="ir.ui.view">
+        <field name="name">appointment.custom.tree</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <tree sample="1" multi_edit="1">
+                <field name="id"/>
+                <field name="reference"/>
+                <field name="inviter_id"/>
+                <field name="customer_id"/>
+                <field name="formality"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form -->
+    <record id="view_appointment_form" model="ir.ui.view">
+        <field name="name">appointment.custom.form</field>
+        <field name="model">appointment.custom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="inviter_id"/>
+                            <field name="customer_id"/>
+                            <field name="number_type"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="formality" widget="radio"/>
+                            <field name="location" widget="radio"
+                                   attrs="{'invisible': [('formality', '!=', 'offline')]}"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Note" name="appointment_note">
+                            <field name="note" type="html"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                    <field name="activity_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="menu_appointment_action" model="ir.actions.act_window">
+        <field name="name">Appointment Custom</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">appointment.custom</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,calendar</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new appointment!
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="ndt_appointment_xlsx"
+        model="report.appointment.weeky"
+        string="Print to XLSX"
+        report_type="xlsx"
+        name="module_name.report_name1"
+        file="res_partner"
+        attachment_use="False"
+    />
+
+</odoo>
