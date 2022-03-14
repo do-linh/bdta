@@ -7,8 +7,9 @@
         <field name="model">appointment.custom</field>
         <field name="arch" type="xml">
             <pivot string="Appointment">
-                <field name="inviter_id"/>
-                <!--                <field name="appointment_count"/>-->
+                <field name="date" interval="week" type="col"/>
+                <field name="inviter_id" type="row"/>
+                <field name="appointment_count"/>
             </pivot>
         </field>
     </record>

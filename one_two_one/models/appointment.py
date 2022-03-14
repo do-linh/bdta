@@ -34,7 +34,7 @@ class ApointmentCustom(models.Model):
         ('10', '10'),
     ], string="Referrals")
 
-    # appointment_count = fields.Integer(string="Count", related='inviter_id.appointment_count', tracking=True)
+    appointment_count = fields.Integer(string="Count", related='inviter_id.appointment_count', tracking=True)
 
     @api.model
     def create(self, vals):
