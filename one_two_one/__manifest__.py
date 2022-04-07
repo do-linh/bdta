@@ -22,7 +22,6 @@
         'report/report_xlsx.xml',
         'report/xlsx_report.xml',
         'wizard/appointment_report_winzard.xml',
-        'wizard/res_partner_report_winzard.xml',
     ],
     'demo': [],
     'qweb': [],
