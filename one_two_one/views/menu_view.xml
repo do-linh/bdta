@@ -3,8 +3,7 @@
     <!-- Apponiment-->
     <menuitem id="menu_appointment_parent_root" name="1-2-1" sequence="1"/>
     <menuitem id="menu_appointment_root" name="Appointment" parent="menu_appointment_parent_root" sequence="5"/>
-    <menuitem id="menu_appointment" name="Appointment" parent="menu_appointment_root" action="menu_appointment_action"
-              sequence="10"/>
+    <menuitem id="menu_appointment" name="Appointment" parent="menu_appointment_root" action="menu_appointment_action" sequence="10"/>
     <!--  Report  -->
     <menuitem id="menu_report_appointment_root" name="Report" parent="menu_appointment_parent_root" sequence="10"/>
     <!-- <menuitem id="menu_report_appointment" name="Report" parent="menu_report_appointment_root"
@@ -13,7 +12,7 @@
     <menuitem id="menu_report_appointment_weeky" name="Report weeky" parent="menu_report_appointment_root"
               action="report_appointment_weeky_action" sequence="20"/>
 
-    <menuitem id="menu_report_root" name="Report XLSX" parent="menu_report_appointment_root" sequence="10"/>
+<!--    <menuitem id="menu_report_root" name="Report XLSX" parent="menu_report_appointment_root" sequence="10"/>-->
     <!-- <menuitem id="menu_report_appointment_wizard" name="Report XLSX" parent="menu_report_root"
               action="action_report_appointment" sequence="20"/> -->
 

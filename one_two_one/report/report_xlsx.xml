@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <report
-            id="print_appointment_xlsx"
-            model="appointment.custom"
-            string="Print to XLSX"
-            report_type="xlsx"
-            name="one_two_one.print_appointment_xlsx"
-            file="Print Appointment"
-    />
+<!--    <report-->
+<!--            id="print_appointment_xlsx"-->
+<!--            model="appointment.custom"-->
+<!--            string="Print to XLSX"-->
+<!--            report_type="xlsx"-->
+<!--            name="one_two_one.print_appointment_xlsx"-->
+<!--            file="Print Appointment"-->
+<!--    />-->
 
     <report
             id="report_res_partner_xlsx"

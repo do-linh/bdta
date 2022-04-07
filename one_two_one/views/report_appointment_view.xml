@@ -67,10 +67,8 @@
                 ('date_week', '>=', (context_today() + relativedelta(weeks=-2,days=1,weekday=0)).strftime('%Y-%m-%d')),
                 ('date_week', '&lt;', (context_today() + relativedelta(weeks=-1,days=1,weekday=0)).strftime('%Y-%m-%d'))]"/>
                 <separator/>
-
                 <filter name="count_gt_1" string="Count greater than 1" domain="[('count', '>', 1)]"/>
                 <separator/>
-
                 <filter name="count_lt_2" string="Count less than 2" domain="[('count','&lt;', 2)]"/>
 
             </search>
