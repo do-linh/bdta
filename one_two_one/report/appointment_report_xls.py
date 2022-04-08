@@ -25,14 +25,6 @@ class AppointmentReportXLSX(models.AbstractModel):
         for appointment in data['appointments']:
             sheet.set_column('A:A', 25)
             sheet.set_column('B:B', 15)
-            # sheet_1 = appointment['appointment_count']
-            # if sheet_1 >= 3:
-            #     sheet.write(row + 1, col + 1, sheet_1, format_green)
-            # elif sheet_1 == 2:
-            #     sheet.write(row, col + 1, sheet_1, format_yellow)
-            # else:
-            #     sheet.write(row, col + 1, sheet_1, format_red)
 
             row += 1
             sheet.write(row, col, appointment['inviter_id'][1], border)
-            # sheet.write(row, col + 1, appointment['appointment_count'], border)

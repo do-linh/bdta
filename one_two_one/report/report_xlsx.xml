@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!--    <report-->
-<!--            id="print_appointment_xlsx"-->
-<!--            model="appointment.custom"-->
-<!--            string="Print to XLSX"-->
-<!--            report_type="xlsx"-->
-<!--            name="one_two_one.print_appointment_xlsx"-->
-<!--            file="Print Appointment"-->
-<!--    />-->
 
     <report
             id="report_res_partner_xlsx"
@@ -17,14 +9,6 @@
             name="base.report_res_partner_xlsx"
             file="Report Res Partner"
     />
-<!--    <report-->
-<!--            id="report_res_partner_xls"-->
-<!--            model="res.partner"-->
-<!--            string="Report Base XLSX"-->
-<!--            report_type="xlsx"-->
-<!--            name="base.report_res_partner_xls"-->
-<!--            file="Report Res Partner"-->
-<!--    />-->
 
     <report
             id="report_appointment_xls"

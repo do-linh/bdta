@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- <record id="report_graph" model="ir.ui.view">
-        <field name="name">report.appointment.graph</field>
-        <field name="model">report.appointment</field>
-        <field name="arch" type="xml">
-            <graph string="Report Graph" sample="1" type="bar">
-                <field name="date" type="row"/>
-                <field name="partner_id" type="col"/>
-                <field name="partner_id"/>
-            </graph>
-        </field>
-    </record>
-
-    <record id="view_report_appointment_tree" model="ir.ui.view">
-        <field name="name">report.appointment.tree</field>
-        <field name="model">report.appointment</field>
-        <field name="arch" type="xml">
-            <tree sample="1" multi_edit="1">
-                <field name="id" />
-                <field name="partner_id"/>
-                <field name="date"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="view_report_appointment_pivot" model="ir.ui.view">
-        <field name="name">report.appointment.pivot</field>
-        <field name="model">report.appointment</field>
-        <field name="arch" type="xml">
-            <pivot string="Invoices Analysis" disable_linking="True" sample="1">
-                <field name="partner_id" type="row"/>
-                <field name="date" interval="week"  type="col"/>
-            </pivot>
-        </field>
-   </record>
-
-
-
-    <record id="menu_report_appointment_action" model="ir.actions.act_window">
-        <field name="name">Report Appointment</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">report.appointment</field>
-        <field name="view_mode">tree,graph,pivot</field>
-        <field name="context"></field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create new report appointment!
-            </p>
-        </field>
-    </record> -->
-
     <record id="report_appointment_weeky_search" model="ir.ui.view">
         <field name="name">report_appointment_weeky_search</field>
         <field name="model">report.appointment.weeky</field>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Apponiment-->
-    <menuitem id="menu_appointment_parent_root" name="1-2-1" sequence="1"/>
+    <menuitem id="menu_appointment_parent_root" name="1-2-1" sequence="1" web_icon="BDTA/one_two_one/static/description/icon.png"/>
     <menuitem id="menu_appointment_root" name="Appointment" parent="menu_appointment_parent_root" sequence="5"/>
     <menuitem id="menu_appointment" name="Appointment" parent="menu_appointment_root" action="menu_appointment_action" sequence="10"/>
     <!--  Report  -->
@@ -11,12 +11,4 @@
 
     <menuitem id="menu_report_appointment_weeky" name="Report weeky" parent="menu_report_appointment_root"
               action="report_appointment_weeky_action" sequence="20"/>
-
-<!--    <menuitem id="menu_report_root" name="Report XLSX" parent="menu_report_appointment_root" sequence="10"/>-->
-    <!-- <menuitem id="menu_report_appointment_wizard" name="Report XLSX" parent="menu_report_root"
-              action="action_report_appointment" sequence="20"/> -->
-
-    <!-- <menuitem id="menu_report_base_wizard_root" name="Report XLSX" parent="contacts.res_partner_menu_config" sequence="20"/>
-    <menuitem id="menu_report_base_wizard" name="Report XLSX" parent="menu_report_base_wizard_root"
-              action="action_report_res_partner" sequence="20"/> -->
 </odoo>

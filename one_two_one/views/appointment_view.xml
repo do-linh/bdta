@@ -8,7 +8,6 @@
         <field name="arch" type="xml">
             <pivot string="Appointment">
                 <field name="inviter_id"/>
-                <!--                <field name="appointment_count"/>-->
             </pivot>
         </field>
     </record>

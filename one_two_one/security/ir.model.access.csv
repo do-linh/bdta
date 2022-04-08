@@ -2,4 +2,3 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_appointment_custom,access.appointment.custom,model_appointment_custom,,1,1,1,1
 access_report_appointment_weeky,access.report.appointment.weeky,model_report_appointment_weeky,,1,1,1,1
 access_appointment_report_wizard,access.appointment.report.wizard,model_appointment_report_wizard,,1,1,1,1
-access_base_report_wizard,access.base.report.wizard,model_base_report_wizard,,1,1,1,1
